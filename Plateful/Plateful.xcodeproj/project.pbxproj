@@ -16,7 +16,6 @@
 		FA1AED6627CAF1C900CB675F /* IntroductionScreenOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AED6527CAF1C900CB675F /* IntroductionScreenOnboarding.swift */; };
 		FA1AED6827CAF1CA00CB675F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1AED6727CAF1CA00CB675F /* Assets.xcassets */; };
 		FA234D81284D4E6E00097541 /* SingleRestaurantDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA234D80284D4E6E00097541 /* SingleRestaurantDetail2.swift */; };
-		FA234D88284EB24600097541 /* SingleRestaurantDetailInformation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA234D87284EB24500097541 /* SingleRestaurantDetailInformation2.swift */; };
 		FA234D8B285009ED00097541 /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA234D8A285009ED00097541 /* ReviewList.swift */; };
 		FA234DA12850209000097541 /* YelpReviewAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA234DA02850209000097541 /* YelpReviewAccess.swift */; };
 		FA234DA52851708D00097541 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA234DA42851708D00097541 /* Reviews.swift */; };
@@ -38,6 +37,7 @@
 		FA3C6D5B280394060094C8A5 /* SingleRestaurantDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C6D5A280394060094C8A5 /* SingleRestaurantDetailInformation.swift */; };
 		FA4FF2F528381F2900A0429D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FF2F428381F2900A0429D /* LocationManager.swift */; };
 		FA602CCC2855654E00D9E024 /* FavouriteRestaurantModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA602CCA2855654E00D9E024 /* FavouriteRestaurantModel.xcdatamodeld */; };
+		FA8187DF28A1AE99008F7337 /* SingleRestaurantDetailInformation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8187DE28A1AE99008F7337 /* SingleRestaurantDetailInformation2.swift */; };
 		FAD76D6C28569B30001BEAA3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD76D6B28569B30001BEAA3 /* MapViewModel.swift */; };
 		FAD76D6E28569BC9001BEAA3 /* MapSingleRestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD76D6D28569BC9001BEAA3 /* MapSingleRestaurantDetail.swift */; };
 		FAD76D7028569BEA001BEAA3 /* MapSingleRestaurantDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD76D6F28569BEA001BEAA3 /* MapSingleRestaurantDetailInformation.swift */; };
@@ -55,7 +55,6 @@
 		FA1AED6527CAF1C900CB675F /* IntroductionScreenOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionScreenOnboarding.swift; sourceTree = "<group>"; };
 		FA1AED6727CAF1CA00CB675F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA234D80284D4E6E00097541 /* SingleRestaurantDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRestaurantDetail2.swift; sourceTree = "<group>"; };
-		FA234D87284EB24500097541 /* SingleRestaurantDetailInformation2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleRestaurantDetailInformation2.swift; path = ../../../../../../../.Trash/SingleRestaurantDetailInformation2.swift; sourceTree = "<group>"; };
 		FA234D8A285009ED00097541 /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
 		FA234DA02850209000097541 /* YelpReviewAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpReviewAccess.swift; sourceTree = "<group>"; };
 		FA234DA42851708D00097541 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		FA3C6D5A280394060094C8A5 /* SingleRestaurantDetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRestaurantDetailInformation.swift; sourceTree = "<group>"; };
 		FA4FF2F428381F2900A0429D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FA602CCB2855654E00D9E024 /* FavoriteRestaurantModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteRestaurantModel.xcdatamodel; sourceTree = "<group>"; };
+		FA8187DE28A1AE99008F7337 /* SingleRestaurantDetailInformation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRestaurantDetailInformation2.swift; sourceTree = "<group>"; };
 		FAABE660280CD36A00B4FF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FAD76D6B28569B30001BEAA3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		FAD76D6D28569BC9001BEAA3 /* MapSingleRestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSingleRestaurantDetail.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			children = (
 				FA3C6D5827F8FC090094C8A5 /* SingleRestaurantDetail.swift */,
 				FA3C6D5A280394060094C8A5 /* SingleRestaurantDetailInformation.swift */,
-				FA234D87284EB24500097541 /* SingleRestaurantDetailInformation2.swift */,
+				FA8187DE28A1AE99008F7337 /* SingleRestaurantDetailInformation2.swift */,
 				FA234D80284D4E6E00097541 /* SingleRestaurantDetail2.swift */,
 			);
 			path = RestaurantCellDetail;
@@ -355,7 +355,6 @@
 				FA2BF7C92854076B00F30823 /* Annotation.swift in Sources */,
 				FA0AB09528592C56009A0593 /* YelpRestaurantAccess.swift in Sources */,
 				FA3C6D4B27EFD75B0094C8A5 /* RestaurantListScreenModel.swift in Sources */,
-				FA234D88284EB24600097541 /* SingleRestaurantDetailInformation2.swift in Sources */,
 				FA0AB09A285D3F53009A0593 /* MoreInformationCell.swift in Sources */,
 				FA4FF2F528381F2900A0429D /* LocationManager.swift in Sources */,
 				FA3C6D5B280394060094C8A5 /* SingleRestaurantDetailInformation.swift in Sources */,
@@ -381,6 +380,7 @@
 				FA0AB098285D3B9B009A0593 /* MoreScreenMain.swift in Sources */,
 				FAD76D722856A762001BEAA3 /* YelpRestaurantsAccess.swift in Sources */,
 				FA3C6D5927F8FC090094C8A5 /* SingleRestaurantDetail.swift in Sources */,
+				FA8187DF28A1AE99008F7337 /* SingleRestaurantDetailInformation2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CDYelpFusionKit
 
 struct ReviewList: View {
     var id: String

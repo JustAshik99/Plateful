@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CDYelpFusionKit
 
 public class YelpReviewAccess : ObservableObject{
     
