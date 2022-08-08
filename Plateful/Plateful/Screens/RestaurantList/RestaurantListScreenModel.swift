@@ -67,6 +67,7 @@ final class RestaurantListScreenModel: ObservableObject{
                 service.getAllRestaurants(.getAllRestaurants(term: "halal restaurant \(query)", location: .init(latitude: self.locationManager.userLocation?.coordinate.latitude ?? 51.500972, longitude: self.locationManager.userLocation?.coordinate.longitude ?? -0.125313), category: query.isEmpty ? cat : nil)) //creating a search query with a query and location data
             }
             .assign(to: &$restaurants)
+        
     }
     func getCityName() -> String{
         locationManager.getPlace(for: locationManager.userLocation!) { placemark in

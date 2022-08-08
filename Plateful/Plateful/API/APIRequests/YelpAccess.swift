@@ -55,11 +55,15 @@ enum Request {
             let rootAddress = "https://api.yelp.com"
             var urlComponents = URLComponents(string: rootAddress)!
             urlComponents.path = "/v3/businesses/search" // root + abc
+            let termQuery = URLQueryItem(name: "term", value: term)
+            let catQuery = URLQueryItem(name: "categories", value: category?.name ?? CuisineOptions.all.name)
+            let longQuery = URLQueryItem(name: "longitude", value: String(location.coordinate.longitude))
+            let latQuery = URLQueryItem(name: "latitude", value: String(location.coordinate.latitude))
             urlComponents.queryItems = [
-                .init(name: "term", value: term), // query nam (halal restaurants + abc)
-                .init(name: "categories", value: category?.name ?? CuisineOptions.all.name), //cuisines
-                .init(name: "longitude", value: String(location.coordinate.longitude)),
-                .init(name: "latitude", value: String(location.coordinate.latitude)),
+                termQuery, // query nam (halal restaurants + abc)
+                catQuery, //cuisines
+                longQuery,
+                latQuery,
             ] //parameters
             let url = urlComponents.url!
             var request = URLRequest(url: url)

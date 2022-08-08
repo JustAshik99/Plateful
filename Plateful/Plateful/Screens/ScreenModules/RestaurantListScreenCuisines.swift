@@ -16,7 +16,7 @@ struct RestaurantListScreenCuisines: View {
             HStack{
                 Text(cuisine.emoji) //cuisine emoji
                     .font(.title)
-                Text(cuisine.name.capitalized) //cuisine name
+                Text(cuisine.name.capitalized(with: nil)) //cuisine name
                     .bold()
             }
         }
