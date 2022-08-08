@@ -13,14 +13,16 @@ let apiKey = "bwOO6N3sxWtvNEVuRY6Y5-FCkvldzPsb7BQNLsOxIrS96UHxH82f6jLZSMa01uz_cb
 
 struct YelpAccess {
     //Yelp API access for the model
-    var getAllRestaurants: (Endpoint) -> AnyPublisher<[Business], Never> //request for list of businesses
-    var getDetails: (Endpoint) -> AnyPublisher<Business?, Never> //request for business details
+    var getAllRestaurants: (Request) -> AnyPublisher<[Business], Never> //request for list of businesses
+    var getDetails: (Request) -> AnyPublisher<Business?, Never> //request for business details
 }
 
 extension YelpAccess {
     static let access = YelpAccess(
-        getAllRestaurants: { endpoint in
-            return URLSession.shared.dataTaskPublisher(for: endpoint.request)
+        getAllRestaurants: { request1 in
+            return
+            
+            URLSession.shared.dataTaskPublisher(for: request1.endpoint)
                 .tryMap(\.data)
                 .decode(type: QueryReturn.self, decoder: JSONDecoder()) //deserialise
                 .map(\.businesses) //map to list of busineeses
@@ -29,9 +31,9 @@ extension YelpAccess {
                 .print("recieved")
                 .eraseToAnyPublisher()
         },
-        getDetails: { endpoint in
+        getDetails: { request2 in
             // URL request and return Businesses
-            return URLSession.shared.dataTaskPublisher(for: endpoint.request)
+            return URLSession.shared.dataTaskPublisher(for: request2.endpoint)
                 .tryMap(\.data)
                 .decode(type: Business?.self, decoder: JSONDecoder())//deserialise to object
                 .replaceError(with: nil)
@@ -42,44 +44,37 @@ extension YelpAccess {
     )
 }
 
-enum Endpoint {
+enum Request {
     case getAllRestaurants(term: String?, location: CLLocation, category: CuisineOptions?)
     case getDetails(id: String)
 
-    var path: String {
+    var endpoint: URLRequest {
+        
         switch self {
-        case .getAllRestaurants:
-            return "/v3/businesses/search"
-        case .getDetails(let id):
-            return "/v3/businesses/\(id)"
-        }
-    }
-
-    var URLqueryItems: [URLQueryItem] {
-        switch self {
-        case .getAllRestaurants(let term, let location, let category): //assign parameters
-            return [
+        case .getAllRestaurants(let term, let location, let category):
+            let rootAddress = "https://api.yelp.com"
+            var urlComponents = URLComponents(string: rootAddress)!
+            urlComponents.path = "/v3/businesses/search" // root + abc
+            urlComponents.queryItems = [
                 .init(name: "term", value: term), // query nam (halal restaurants + abc)
                 .init(name: "categories", value: category?.name ?? CuisineOptions.all.name), //cuisines
                 .init(name: "longitude", value: String(location.coordinate.longitude)),
                 .init(name: "latitude", value: String(location.coordinate.latitude)),
-            ]
-        case .getDetails:
-            return [] // no param
+            ] //parameters
+            let url = urlComponents.url!
+            var request = URLRequest(url: url)
+            request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization") //api auth
+            return request
+        case .getDetails(let id):
+            let rootAddress = "https://api.yelp.com"
+            var urlComponents = URLComponents(string: rootAddress)!
+            urlComponents.path = "/v3/businesses/\(id)" // root + abc
+            let url = urlComponents.url!
+            var request = URLRequest(url: url)
+            request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization") //api auth
+            return request
         }
     }
-
-    var request: URLRequest {
-        let rootAddress = "https://api.yelp.com"
-        var urlComponents = URLComponents(string: rootAddress)!
-        urlComponents.path = path // root + abc
-        urlComponents.queryItems = URLqueryItems //parameters
-        let url = urlComponents.url!
-        var request = URLRequest(url: url)
-        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization") //api auth
-        return request
-    }
-
 }
 
 struct QueryReturn: Codable{
